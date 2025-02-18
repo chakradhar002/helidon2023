@@ -42,7 +42,7 @@ public class HelloController {
 	
 	
 	 // Get All Employees (GET)
-    @GetMapping
+    @GetMapping("/employee")
     public List<Employee> getAllEmployees() {
         return empservice.getAllEmployees();
     }
