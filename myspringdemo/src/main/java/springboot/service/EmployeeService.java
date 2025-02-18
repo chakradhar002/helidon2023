@@ -36,5 +36,10 @@ public class EmployeeService {
         }
     }
 	
+	// Get All Employees
+    public List<Employee> getAllEmployees() {
+        return repo.findAll();
+    }
+	
 
 }

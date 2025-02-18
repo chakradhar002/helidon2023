@@ -39,5 +39,14 @@ public class HelloController {
         return updatedEmployee != null ? ResponseEntity.ok(updatedEmployee) : ResponseEntity.notFound().build();
     }
 	
+	
+	
+	 // Get All Employees (GET)
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return empservice.getAllEmployees();
+    }
+
+	
 
 }
