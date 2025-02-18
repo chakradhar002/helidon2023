@@ -28,5 +28,14 @@ public class HelloController {
 		return result;
 
 	}
+	
+	
+	 // Update Employee (PUT)
+    @PutMapping("/employee/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {
+        Employee updatedEmployee = empservice.updateEmployee(id, employeeDetails);
+        return updatedEmployee != null ? ResponseEntity.ok(updatedEmployee) : ResponseEntity.notFound().build();
+    }
+	
 
 }

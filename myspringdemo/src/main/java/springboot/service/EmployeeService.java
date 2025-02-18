@@ -19,5 +19,19 @@ public class EmployeeService {
 		return result;
 
 	}
+	
+	
+	// Update Employee
+    public Employee updateEmployee(Long id, Employee employeeDetails) {
+        Optional<Employee> optionalEmployee = repo.findById(id);
+        if (optionalEmployee.isPresent()) {
+            Employee employee = optionalEmployee.get();
+            employee.setName(employeeDetails.getName());
+         
+            return repo.save(employee);
+        } else {
+            return null; // Handle not found case
+        }
+    }
 
 }
